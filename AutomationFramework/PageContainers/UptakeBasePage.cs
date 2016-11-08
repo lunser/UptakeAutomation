@@ -38,10 +38,9 @@ namespace AutomationFramework.PageContainers
         {
             return UptakeHeader.Displayed &&
                 UptakeFooter.Displayed;
-
         }
 
-        public bool DoAllHeaderMenuItemsMatchExpected()
+        public bool HeaderMenuItemsMatchExpected()
         {
             var actual = ParseToolbarValuesIntoEnumType<HeaderMenu>(HeaderNavElements).GetEnumerator().ToString();
             //return DataProcessor.IsValuePresentInList();
