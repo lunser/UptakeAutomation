@@ -9,7 +9,6 @@ namespace AutomationFramework.PageContainers
     [ExcludeFromCodeCoverage]
     public class HomePage : UptakeBasePage
     {
-
         #region DOM elements
         [FindsBy(How = How.Id, Using = "callout")]
         private IWebElement CalloutSection { get; set; }
@@ -22,13 +21,11 @@ namespace AutomationFramework.PageContainers
 
         [FindsBy(How = How.Id, Using = "actions")]
         private IWebElement ActionsSection { get; set; }
-
         #endregion
 
         public HomePage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
-
             Assert.IsTrue(IsAt(), "Home Page elements are missing");
         }
 

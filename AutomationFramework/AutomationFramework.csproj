@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\FooterMenu.cs" />
     <Compile Include="Constants\HeaderMenu.cs" />
     <Compile Include="DataProcessor.cs" />
     <Compile Include="DriverFactory.cs" />

@@ -15,13 +15,9 @@ namespace AutomationFramework.PageContainers
         [FindsBy(How = How.Id, Using = "testimonial")]
         private IWebElement HowTestimonialContainer { get; set; }
 
-
-
-
         public ApproachPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
-
             Assert.IsTrue(IsAt(), "Home Page elements are missing");
         }
 

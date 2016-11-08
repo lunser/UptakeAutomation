@@ -6,21 +6,14 @@ namespace AutomationFramework
 {
     public class DataProcessor
     {
-        public static bool IsValuePresentInList(IEnumerable<string> expectedVal, IEnumerable<string> actualValues)
+        public static bool VerifyValuesMatch(IEnumerable<string> expectedValues, IEnumerable<string> actualValues)
         {
             if (actualValues == null)
             {
                 throw new ArgumentNullException(nameof(actualValues));
             }
-            bool result = false;
-            foreach (var item in expectedVal)
-            {
-                result = actualValues.Any(val => val.Contains(item));
-            }
-
-            var foundNotFound = result ? "Present" : "Absent";
-            Console.WriteLine($@"Look for value '{expectedVal}'	:	{foundNotFound}");
-            return result;
+            var result = expectedValues.Count(item => actualValues.Any(val => val.Contains(item)));
+            return result == actualValues.Count();
         }
     }
 }
